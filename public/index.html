@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      width: 80%;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎧 Appel Vocal Éco</h2>
+  <input type="text" id="pseudo" placeholder="Votre pseudo"><br>
+  <input type="text" id="room" placeholder="Nom de la room"><br>
+  <label><input type="checkbox" id="ecoMode"> ⚡ Mode Éco (ultra basse conso)</label><br><br>
+  <button onclick="enterRoom()">Entrer</button>
+
+  <script>
+    function enterRoom() {
+      const pseudo = document.getElementById('pseudo').value;
+      const room = document.getElementById('room').value;
+      const eco = document.getElementById('ecoMode').checked;
+      const params = new URLSearchParams({ pseudo, room, eco });
+      window.location.href = `/call.html?${params.toString()}`;
+    }
+  </script>
+</body>
+</html>

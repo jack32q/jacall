@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Appel vocal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    h2 { margin-bottom: 20px; }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+    #micStatus {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    #dataUsage {
+      font-size: 16px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h2>📞 Appel en cours</h2>
+  <p id="status">Connexion en cours...</p>
+  <p id="micStatus">🔍 Analyse micro...</p>
+  <p id="dataUsage">💾 0.00 Mo utilisés</p>
+  <button id="muteBtn">🔇 Mute</button>
+  <button id="hangupBtn">📴 Raccrocher</button>
+  <audio id="remoteAudio" autoplay></audio>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
